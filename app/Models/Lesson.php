@@ -14,7 +14,13 @@ class Lesson extends Model
      *
      * @var array
      */
-    protected $fillable = [
+    /*protected $fillable = [
         'title'
-    ];
+    ];*/
+    protected $fillable = ['user_id', 'title'];
+    
+    public function users() {
+        return $this->belongsToMany(User::class, 'lessons_user')->withPivot('watched');
+
+    }
 }
