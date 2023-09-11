@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Events;
-
+use App\Models\User;
 use App\Models\Comment;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Foundation\Events\Dispatchable;
@@ -20,5 +20,6 @@ class CommentWritten
     public function __construct(Comment $comment)
     {
         $this->comment = $comment;
+        $this->user = $user;
     }
 }
