@@ -10,8 +10,7 @@ class AchievementsController extends Controller
 {
     public function index(Request $request, $user)
     {
-        //$userId = $user;
-        $userId=1;
+        $userId = $user;
         $unlockedAchievements = $this->unlockedAchievements($userId);
         $nextAvailableAchievements = $this->getNextAvailableAchievements($userId);
         $currentBadge = $this->getCurrentBadge($userId);
